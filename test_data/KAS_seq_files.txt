@@ -1,0 +1,1 @@
+HEK293_KAS-Input.rep1.bigWig HEK293_KAS-Input.rep2.bigWig HEK293_KAS-IP.rep1.bigWig HEK293_KAS-IP.rep2.bigWig
