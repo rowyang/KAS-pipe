@@ -180,7 +180,9 @@ samtools index ${basename}_rmdup.bam
 # filter unique mapped reads
 # samtools view -b -q 10 ${basename}_rmdup.bam > ${basename}_unique.bam
 
-samtools view -h  ${basename}_rmdup.bam | ${SH_SCRIPT_DIR}/../src/SAMtoBED  -i - -o  ${basename}.bed -x -v 
+echo "" >> reads_statistics.txt
+echo "Average length of DNA fragments" >> reads_statistics.txt
+samtools view -h  ${basename}_rmdup.bam | ${SH_SCRIPT_DIR}/../src/SAMtoBED  -i - -o  ${basename}.bed -x -v >> reads_statistics.txt 2>&1
 # samtools view -h ${basename}_unique.bam | ${SH_SCRIPT_DIR}/../src/SAMtoBED  -i - -o  ${basename}.bed -x -v
 bedSort ${basename}.bed ${basename}.sort.bed
 genomeCoverageBed -bg -i ${basename}.sort.bed -g ${SH_SCRIPT_DIR}/../chrom_size/${assembly}.chrom.sizes > ${basename}.bg

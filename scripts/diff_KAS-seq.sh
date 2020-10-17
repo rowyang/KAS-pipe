@@ -165,7 +165,7 @@ awk 'BEGIN{if(NR>0) a[NR]=0}{if(NR>0) for(i=4; i<=NF; i++) a[NR]+=$i}END{for(j i
 #filter the bins with averaged KAS-seq density lower than 10.
 paste ${basename}_on_1kb_bins.average ${basename}_on_1kb_bins.bed | awk '$1>=10 {print $0}' > ${basename}_on_1kb_bins.filter.bed
 cut -f1,2,3,4 --complement ${basename}_on_1kb_bins.filter.bed > ${basename}_on_${assembly}_${regions}.matrix
-awk '{printf("%s\n","Test-"$2"-"$3"-"$4)}' ${basename}_on_1kb_bins.filter.bed > ${basename}_on_${assembly}_${regions}.rowname
+awk '{printf("%s\n","gene"NR"-"$2"-"$3"-"$4)}' ${basename}_on_1kb_bins.filter.bed > ${basename}_on_${assembly}_${regions}.rowname
 
 rm -f ${basename}_on_1kb_bins.tab  
 rm -f ${basename}_on_1kb_bins.npz
@@ -180,7 +180,7 @@ multiBigwigSummary BED-file --bwfiles $KAS_seq_files --BED $peaks_list --labels 
 
 sed "s/nan/0/g" ${basename}_on_${assembly}_${regions}.tab | sed "1d" > ${basename}_on_${assembly}_${regions}.bed
 cut -f1,2,3 --complement ${basename}_on_${assembly}_${regions}.bed > ${basename}_on_${assembly}_${regions}.matrix
-awk '{printf("%s\n",$1"-"$2"-"$3)}' ${basename}_on_${assembly}_${regions}.bed > ${basename}_on_${assembly}_${regions}.rowname
+awk '{printf("%s\n","gene"NR"-"$1"-"$2"-"$3)}' ${basename}_on_${assembly}_${regions}.bed > ${basename}_on_${assembly}_${regions}.rowname
 
 rm -f ${basename}_on_${assembly}_${regions}.tab
 rm -f ${basename}_on_${assembly}_${regions}.npz
@@ -196,7 +196,7 @@ bedSort ${SH_SCRIPT_DIR}/../Annotation/${assembly}_Refseq.${regions}.bed ${assem
 bedSort ${basename}_on_${assembly}_Refseq.${regions}.bed ${basename}_on_${assembly}_Refseq.${regions}.sort.bed
 paste ${assembly}_Refseq.${regions}.sort.bed ${basename}_on_${assembly}_Refseq.${regions}.sort.bed > ${basename}_on_${assembly}_Refseq.${regions}.annotation.bed
 cut -f1,2,3,4,5,6,7,8,9 --complement ${basename}_on_${assembly}_Refseq.${regions}.annotation.bed > ${basename}_on_${assembly}_${regions}.matrix
-awk '{printf("%s\n",$1"-"$2"-"$3"-"$4)}' ${basename}_on_${assembly}_Refseq.${regions}.annotation.bed > ${basename}_on_${assembly}_${regions}.rowname 
+awk '{printf("%s\n","gene"NR"-"$1"-"$2"-"$3"-"$4)}' ${basename}_on_${assembly}_Refseq.${regions}.annotation.bed > ${basename}_on_${assembly}_${regions}.rowname 
 
 rm -f ${basename}_on_${assembly}_Refseq.${regions}.npz
 rm -f ${basename}_on_${assembly}_Refseq.${regions}.tab
@@ -215,7 +215,7 @@ bedSort ${SH_SCRIPT_DIR}/../Annotation/${assembly}_Refseq.${regions}.bed ${assem
 bedSort ${basename}_on_${assembly}_Refseq.${regions}.bed ${basename}_on_${assembly}_Refseq.${regions}.sort.bed
 paste ${assembly}_Refseq.${regions}.sort.bed ${basename}_on_${assembly}_Refseq.${regions}.sort.bed > ${basename}_on_${assembly}_Refseq.${regions}.annotation.bed
 cut -f1,2,3,4,5,6,7,8,9 --complement ${basename}_on_${assembly}_Refseq.${regions}.annotation.bed > ${basename}_on_${assembly}_${regions}.matrix
-awk '{printf("%s\n",$1"-"$2"-"$3"-"$4)}' ${basename}_on_${assembly}_Refseq.${regions}.annotation.bed > ${basename}_on_${assembly}_${regions}.rowname
+awk '{printf("%s\n","gene"NR"-"$1"-"$2"-"$3"-"$4)}' ${basename}_on_${assembly}_Refseq.${regions}.annotation.bed > ${basename}_on_${assembly}_${regions}.rowname
 
 rm -f ${basename}_on_${assembly}_Refseq.${regions}.npz
 rm -f ${basename}_on_${assembly}_Refseq.${regions}.tab
@@ -234,7 +234,7 @@ bedSort ${SH_SCRIPT_DIR}/../Annotation/${assembly}_Refseq.${regions}.bed ${assem
 bedSort ${basename}_on_${assembly}_Refseq.${regions}.bed ${basename}_on_${assembly}_Refseq.${regions}.sort.bed
 paste ${assembly}_Refseq.${regions}.sort.bed ${basename}_on_${assembly}_Refseq.${regions}.sort.bed > ${basename}_on_${assembly}_Refseq.${regions}.annotation.bed
 cut -f1,2,3,4,5,6,7,8,9 --complement ${basename}_on_${assembly}_Refseq.${regions}.annotation.bed > ${basename}_on_${assembly}_${regions}.matrix
-awk '{printf("%s\n",$1"-"$2"-"$3"-"$4)}' ${basename}_on_${assembly}_Refseq.${regions}.annotation.bed > ${basename}_on_${assembly}_${regions}.rowname
+awk '{printf("%s\n","gene"NR"-"$1"-"$2"-"$3"-"$4)}' ${basename}_on_${assembly}_Refseq.${regions}.annotation.bed > ${basename}_on_${assembly}_${regions}.rowname
 
 rm -f ${basename}_on_${assembly}_Refseq.${regions}.npz
 rm -f ${basename}_on_${assembly}_Refseq.${regions}.tab
