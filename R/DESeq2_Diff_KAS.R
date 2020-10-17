@@ -47,7 +47,7 @@ dds$condition <- relevel(dds$condition, ref = "untreated")
 
 #Differential KAS-seq analysis
 dds <- DESeq(dds)
-res <- results(dds, name="KAS_treated_vs_untreated")
+res <- results(dds, name="condition_treated_vs_untreated")
 resOrdered <- res[order(res$padj),]
 resOrdered=as.data.frame(resOrdered)
 DE.KAS=resOrdered[abs(resOrdered$log2FoldChange)>log2(1.5) & resOrdered$padj <0.01 ,]
