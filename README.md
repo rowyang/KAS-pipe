@@ -57,3 +57,4 @@ $ build_reference_genome.sh hg19 ~/Software/
 # <assembly> Input the assembly of the reference genome you want to download and install(mm9, mm10, hg19, hg38...).
 # <dest_dir> Input the path of the directory that you want to install your interested genome in your server.
 ```
+# Usage:
