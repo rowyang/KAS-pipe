@@ -247,7 +247,7 @@ Example: KAS.treated.rep1 KAS.treated.rep2 KAS.DMSO.rep1 KAS.DMSO.rep2 ---labels
 <assembly>                 Input the assembly of your reference genome(mm9, mm10, hg19, hg38...).
 <basename>                 Input the basename of output files generated from this shell script.
 <threads>                  Input the number of threads you want to use.
-<diff_condition>           Input the condition table you want to use for KAS-seq differential anlsysis.
+<diff_condition>           Input the condition table(tab delimited file) you want to use for KAS-seq differential anlsysis.
 Example:              condition
 KAS.treated.rep1      treated
 KAS.treated.rep2      treated
