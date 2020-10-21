@@ -172,11 +172,11 @@ Example: Reds ---colors.txt or Reds Oranges Blues Greens ---colors.txt
 Successful KAS-seq data:
 ```Profile on genebody```
   
-<div align=center><img src="https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.Profile.png" width="400" height="300">
+<img src="https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.Profile.png" width="400" height="300">
   
 ```Heatmap on genebody```
   
-<img src="https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.heatmap.png" width="300" height="500">
+<img src="https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.heatmap.png" width="300" height="600">
 
 
 ## Differential KAS-seq analysis: 
