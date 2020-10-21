@@ -5,10 +5,10 @@ KAS-pipe is an analysis pipeline for KAS-seq data. KAS-seq is a kethoxal-assiste
 
 # Table of Contents
 =================================
-* [Dependencies:](#Dependencies:)
-* [Installation:](#Installation:)
+- [Dependencies](#Dependencies:)
+- [Installation](#Installation:)
 
-# Dependencies:
+## Dependencies:
 - samtools ==1.9
 - bedtools ==2.29.0
 - picard ==2.20.7
