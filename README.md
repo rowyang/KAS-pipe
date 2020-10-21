@@ -81,7 +81,7 @@ Options:
 <raw_fastq_read1>        Input the single-end raw fastq file or read 1 of paired-end raw fastq files.
 <raw_fastq_read2>        Input the read 2 of paired-end raw fastq files.
 -h or --help             Print the help.
-Note: This shell script invoke the trim-galore, please refer http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/ for more information. 
+Note: This shell script invokes the trim-galore, please refer http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/ for more information. 
 ```
 
 
