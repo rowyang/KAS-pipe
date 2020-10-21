@@ -42,7 +42,7 @@ $ ./setup.sh
 # Install conda environment.
 $ install_conda_env.sh
 ```
-## Install reference genome using KAS-pipe shell script:
+## Install reference genome on your linux:
 ```Swift
 # Please create a directory where you want to install your reference genome and index.
 $ mkdir -p ~/Software/
