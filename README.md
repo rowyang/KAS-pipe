@@ -170,7 +170,11 @@ Example: Reds ---colors.txt or Reds Oranges Blues Greens ---colors.txt
 -h or --help              Print the help.
 ```
 Successful KAS-seq data:
-![image](https://github.com/Ruitulyu/KAS-pipe/blob/master/images/Schematic%20diagram%20for%20KAS-seq.png)
+Profile on genebody
+![image](https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.Profile.png)
+
+Heatmap on genebody
+
 ## Differential KAS-seq analysis: 
 diff_KAS-seq.sh - This script is used to identify regions with differential KAS-seq signal.
 ```Swift
