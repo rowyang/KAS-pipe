@@ -55,16 +55,17 @@ $ build_reference_genome.sh hg19 ~/Software/Genome/
 build_reference_genome.sh - This script is used to install reference genome <assembly> in a directory <dest_dir>.
 Usage: build_reference_genome.sh <assembly> <dest_dir>
 Example: nohup build_reference_genome.sh hg19 /your/genome/data/path/ &
+
 Options:
-<assembly> Input the assembly of the reference genome you want to download and install(mm9, mm10, hg19, hg38...).
-<dest_dir> Input the path of the directory that you want to install your interested genome in your server.
--h or --help Print the help.
+<assembly>               Input the assembly of the reference genome you want to download and install(mm9, mm10, hg19, hg38...).
+<dest_dir>               Input the path of the directory that you want to install your interested genome in your server.
+-h or --help             Print the help.
 ```
 # Usage:
 
 ## Adapter and low quality sequence trimming:
 trim_adapter.sh - This script is used to trim adapter and low quality sequence from Raw KAS-seq data.
-``Swift
+```Swift
 Single_end: trim_adapter.sh <Adapter_type> <Minimum_reads_length> <threads> <single> <raw_fastq_read>
 Paired_end: trim_adapter.sh <Adapter_type> <Minimum_reads_length> <threads> <paired> <raw_fastq_read1> <raw_fastq_read2>
 
