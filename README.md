@@ -44,21 +44,16 @@ $ chmod 755 setup.sh
 $ ./setup.sh
 $ install_conda_env.sh
 ```
-## Download reference genome and build bowtie2 index using KAS-pipe shell script:
+## Install reference genome using KAS-pipe shell script:
 ```Swift
 # Please create a directory where you want to install your reference genome and index. Example: mkdir -p ~/Software/;
 $ cd ~/Software/
 $ build_reference_genome.sh hg19 ~/Software/
 
 # build_reference_genome.sh - This script is used to install reference genome <assembly> in a directory <dest_dir>.
-#
 # Usage: build_reference_genome.sh <assembly> <dest_dir>
-#
 # Example: nohup build_reference_genome.sh hg19 /your/genome/data/path/ &
-#
 # Options:
 # <assembly> Input the assembly of the reference genome you want to download and install(mm9, mm10, hg19, hg38...).
-#
 # <dest_dir> Input the path of the directory that you want to install your interested genome in your server.
-#
 ```
