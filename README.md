@@ -176,6 +176,7 @@ Successful KAS-seq data:
   ```Heatmap on genebody```
 ![image](https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.heatmap.png)
 
+
 ## Differential KAS-seq analysis: 
 diff_KAS-seq.sh - This script is used to identify regions with differential KAS-seq signal.
 ```Swift
