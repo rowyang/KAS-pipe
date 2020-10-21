@@ -276,7 +276,7 @@ Example: red blue green purple ---colors.txt
 <peaks_list>              Input the merged KAS-seq peaks list(mergeBed -i Sorted_total_KAS-seq_peak.bed > merged_KAS-seq_peaks.bed).
 -h or --help              Print the help.
 ```
-## Introduction of other provided shell scripts:
+## Introduction for other provided shell scripts in KAS-pipe:
 ```Swift
 define_single-stranded_enhancers.sh       This script is used to define single-stranded enhancers.
 download_reference_genome.sh              This script is used to download reference genome <assembly> in a directory <dest_dir>.
