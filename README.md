@@ -3,9 +3,6 @@ KAS-pipe is an analysis pipeline for KAS-seq data. KAS-seq is a kethoxal-assiste
 
 ![image](https://github.com/Ruitulyu/KAS-pipe/blob/master/images/Schematic%20diagram%20for%20KAS-seq.png)
 
-# Citation:
-Wu, Tong, et al. [Kethoxal-assisted single-stranded DNA sequencing captures global transcription dynamics and enhancer activity in situ](https://www.nature.com/articles/s41592-020-0797-9). Nature Methods 17.5 (2020): 515-523.
-
 # Dependencies:
 - samtools ==1.9
 - bedtools ==2.29.0
@@ -32,6 +29,9 @@ Wu, Tong, et al. [Kethoxal-assisted single-stranded DNA sequencing captures glob
 
 - java-jdk
 - python3
+
+# Installation:
+Please make sure you have [miniconda3](https://docs.conda.io/en/latest/miniconda.html) or [anaconda3](https://www.anaconda.com/products/individual) environments in your server in order to use the provided shell script to install the dependencies. Or you can follow the user guide to accomplish the conda installation: https://docs.conda.io/projects/conda/en/latest/user-guide/install/.
 
 ## Install KAS-pipe by cloning this repository:
 ```Swift
@@ -285,5 +285,6 @@ plotFingerprint.sh                        This script is used to plot fingerprin
 uninstall_conda_env.sh                    This script is used to uninstall KAS-pipe conda environment.
 update_conda_env.sh                       This script is used to update KAS-pipe conda environment.
 ```
-# Installation:
-Please make sure you have [miniconda3](https://docs.conda.io/en/latest/miniconda.html) or [anaconda3](https://www.anaconda.com/products/individual) environments in your server in order to use the provided shell script to install the dependencies. Or you can follow the user guide to accomplish the conda installation: https://docs.conda.io/projects/conda/en/latest/user-guide/install/.
+
+# Citation:
+Wu, Tong, et al. [Kethoxal-assisted single-stranded DNA sequencing captures global transcription dynamics and enhancer activity in situ](https://www.nature.com/articles/s41592-020-0797-9). Nature Methods 17.5 (2020): 515-523.
