@@ -33,9 +33,6 @@ Wu, Tong, et al. [Kethoxal-assisted single-stranded DNA sequencing captures glob
 - java-jdk
 - python3
 
-# Installation:
-Please make sure you have [miniconda3](https://docs.conda.io/en/latest/miniconda.html) or [anaconda3](https://www.anaconda.com/products/individual) environments in your server in order to use the provided shell script to install the dependencies. Or you can follow the user guide to accomplish the conda installation: https://docs.conda.io/projects/conda/en/latest/user-guide/install/.
-
 ## Install KAS-pipe by cloning this repository:
 ```Swift
 $ git clone https://github.com/Ruitulyu/KAS-pipe
@@ -179,6 +176,36 @@ Successful KAS-seq data:
   
 <img src="https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.heatmap.png" width="300" height="500">
 
+## KAS-seq correlation analysis:
+plotCorrelation.sh - This script is used to generate correlation plot for KAS-seq data.
+```Swift
+Note: BigWig files of KAS-seq data were needed
+Usage:
+Bins mode: plotCorrelation.sh <KAS_seq_files> <labels> <bins> <assembly> <basename> <threads> <plot_types>
+Peaks mode: plotCorrelation.sh <KAS_seq_files> <labels> <peaks> <assembly> <basename> <threads> <plot_types> <peaks_list>
+
+Example:
+Bins mode: nohup plotCorrelation.sh KAS_seq_files.txt labels.txt bins hg19 KAS-seq 10 heatmap &
+Peaks mode: nohup plotCorrelation.sh KAS_seq_files.txt labels.txt peaks hg19 KAS-seq 10 heatmap peaks_list.bed &
+
+Options:
+<KAS_seq_files>          Input the text file containing the name of KAS-seq bigWig files.
+Example: KAS.rep1.bigWig KAS.rep2.bigWig KAS.rep3.bigWig KAS.rep4.bigWig ---KAS_seq_files.txt
+
+<labels>                 Input the text file containing the labels of KAS-seq data in <KAS_seq_files>.
+Note:The number of labels needs to be consistent with the number of KAS-seq bigWig files.
+Example: KAS.rep1 KAS.rep2 KAS.rep3 KAS.rep3 ---labels.txt
+
+<regions>                Input the regions you want to use to do the correlation analysis(e.g. bins or peaks).
+<assembly>               Input the assembly of reference genome you use for KAS-seq data mapping.
+<basename>               Input the basename of output files.
+<threads>                Input the number of threads.
+<plot_types>             Input the types of plot you want to generate(e.g. scatterplot or heatmap).
+If you want to plot heatmap, please make sure if you have more than 2 samples.
+
+<peaks_list>             Input the merged KAS-seq peaks list(mergeBed -i Sorted_total_KAS-seq_peak.bed > merged_KAS-seq_peaks.bed).
+-h or --help             Print the help.
+```
 
 ## Differential KAS-seq analysis: 
 diff_KAS-seq.sh - This script is used to identify regions with differential KAS-seq signal.
@@ -219,3 +246,44 @@ diff_KAS-seq.sh outputs two files containing the peaks, bins or genes list with 
 ---treated_vs_untreated_DESeq2_output.csv
 ---DE.KAS_treated_vs_untreated_DESeq2_Fold1.5_padj0.01_output.csv
 ```
+## Plot principal component analysis(PCA):
+plotPCA.sh - This script is used to plot PCA analysis for KAS-seq data(bigWig files are needed).
+```Swift
+Usage:
+Bins mode: plotPCA.sh <KAS_seq_files> <labels> <colors> <bins> <basename> <threads>
+Peaks mode: plotPCA.sh <KAS_seq_files> <labels> <colors> <peaks> <basename> <threads> <peaks_list>
+
+Example:
+Bins mode: nohup plotPCA.sh KAS_seq_files.txt labels.txt colors.txt bins KAS-seq 10 &
+Peaks mode: nohup plotPCA.sh KAS_seq_files.txt labels.txt colors.txt peaks KAS-seq 10 peaks_list.bed &
+
+Options:
+<KAS_seq_files>           Input the text file containing file name of KAS-seq bigWig files.
+Example: KAS.rep1.bigWig KAS.rep2.bigWig KAS.rep3.bigWig KAS.rep4.bigWig ---KAS_seq_files.txt
+
+<labels>                  Input the text file containing the labels of KAS-seq data in <KAS_seq_files>.
+Note:The number of labels needs to be consistent with the number of KAS-seq bigWig files. 
+Example: KAS.rep1 KAS.rep2 KAS.rep3 KAS.rep4 ---labels.txt
+
+<colors>                  Input the text file containing color list for the dots of KAS-seq data in PCA plot.
+Note:The number of colors needs to be consistent with the number of KAS-seq bigWig files.
+The list of valid color names: https://matplotlib.org/examples/color/named_colors.html.
+Example: red blue green purple ---colors.txt
+
+<regions>                 Input the mode you want to define the KAS-seq signal enriched regions(bins, peaks).
+<threads>                 Input the number pf threads.
+<basename>                Input the basename of output files.
+<peaks_list>              Input the merged KAS-seq peaks list(mergeBed -i Sorted_total_KAS-seq_peak.bed > merged_KAS-seq_peaks.bed).
+-h or --help              Print the help.
+```
+## Introduction of other provided shell scripts:
+```Swift
+define_single-stranded_enhancers.sh       This script is used to define single-stranded enhancers.
+download_reference_genome.sh              This script is used to download reference genome <assembly> in a directory <dest_dir>.
+make_UCSC_files.sh                        This script is used to generate UCSC genome browser submit ready file.
+plotFingerprint.sh                        This script is used to plot fingerprint for KAS-seq data(indexed KAS-seq Bam files are needed).
+uninstall_conda_env.sh                    This script is used to uninstall KAS-pipe conda environment.
+update_conda_env.sh                       This script is used to update KAS-pipe conda environment.
+```
+# Installation:
+Please make sure you have [miniconda3](https://docs.conda.io/en/latest/miniconda.html) or [anaconda3](https://www.anaconda.com/products/individual) environments in your server in order to use the provided shell script to install the dependencies. Or you can follow the user guide to accomplish the conda installation: https://docs.conda.io/projects/conda/en/latest/user-guide/install/.
