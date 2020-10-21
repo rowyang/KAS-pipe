@@ -7,14 +7,14 @@ KAS-pipe is an analysis pipeline for KAS-seq data. KAS-seq is a kethoxal-assiste
 =================================
 - [Dependencies](#Dependencies:)
 - [Installation](#Installation:)
-- [Adapter and low quality sequence trimming](#Adapter and low quality sequence trimming:)
-- [Map KAS-seq data to reference genome](#Map KAS-seq data to reference genome:)
-- [KAS-seq peaks calling](#KAS-seq peaks calling:)
-- [Plot heatmap or metagene profiles](#Plot heatmap or metagene profiles:)
-- [KAS-seq correlation analysis](#KAS-seq correlation analysis:)
-- [Differential KAS-seq analysis](#Differential KAS-seq analysis:)
-- [Plot principal component analysis(PCA)](#Plot principal component analysis(PCA):)
-- [Introduction for other provided shell scripts in KAS-pipe](#Introduction for other provided shell scripts in KAS-pipe:)
+- [Adapter and low quality sequence trimming](#Adapter-and-low-quality-sequence-trimming:)
+- [Map KAS-seq data to reference genome](#Map-KAS-seq-data-to-reference-genome:)
+- [KAS-seq peaks calling](#KAS-seq-peaks-calling:)
+- [Plot heatmap or metagene profiles](#Plot-heatmap-or-metagene-profiles:)
+- [KAS-seq correlation analysis](#KAS-seq-correlation-analysis:)
+- [Differential KAS-seq analysis](#Differential-KAS-seq-analysis:)
+- [Plot principal component analysis(PCA)](#Plot-principal-component-analysis(PCA):)
+- [Introduction for other provided shell scripts in KAS-pipe](#Introduction-for-other-provided-shell-scripts-in-KAS-pipe:)
 - [Citation](#Citation:)
 
 # Dependencies:
