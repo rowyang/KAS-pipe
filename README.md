@@ -34,7 +34,7 @@ Wu, Tong, et al. [Kethoxal-assisted single-stranded DNA sequencing captures glob
 - python3
 
 # Installation:
-Please make sure you have [miniconda3](https://docs.conda.io/en/latest/miniconda.html) or [anaconda3](https://www.anaconda.com/products/individual) environments in your server in order to use the provided shell script to install the dependencies. Or you can follow the user guide to accomplish the anaconda installation: https://docs.conda.io/projects/conda/en/latest/user-guide/install/.
+Please make sure you have [miniconda3](https://docs.conda.io/en/latest/miniconda.html) or [anaconda3](https://www.anaconda.com/products/individual) environments in your server in order to use the provided shell script to install the dependencies. Or you can follow the user guide to accomplish the conda installation: https://docs.conda.io/projects/conda/en/latest/user-guide/install/.
 
 ## Install KAS-pipe by cloning this repository:
 ```Swift
