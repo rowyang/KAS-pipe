@@ -173,11 +173,11 @@ Successful KAS-seq data:
 
 - Profile on genebody
   
-<img src="https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.Profile.png" width="400" height="300">
+<img src="https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.Profile.png" width="300" height="250">
   
 - Heatmap on genebody
   
-<img src="https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.heatmap.png" width="300" height="450">
+<img src="https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.heatmap.png" width="300" height="500">
 
 
 ## Differential KAS-seq analysis: 
