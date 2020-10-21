@@ -84,6 +84,28 @@ Options:
 Note: This shell script invokes the trim-galore, please refer http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/ for more information. 
 ```
 
+## map KAS-seq data to reference genome:
+map_KAS-seq.sh - This script is used to map KAS-seq data to the reference genome.
+```Swift
+Usage:
+Single_end: map_KAS-seq.sh <bowtie2_index_path> <threads> <basename> <assembly> <single> <raw_fastq_read>
+Paired_end: map_KAS-seq.sh <bowtie2_index_path> <threads> <basename> <assembly> <paired> <raw_fastq_read1> <raw_fastq_read2>
+
+Example:
+Single_end: nohup map_KAS-seq.sh /Genome/hg19_Bowtie2Index/hg19 10 KAS-seq_data hg19 single KAS-seq.single.fastq.gz &
+Paired_end: nohup map_KAS-seq.sh /Genome/hg19_Bowtie2Index/hg19 10 KAS-seq_data hg19 paired KAS-seq.paired.R1.fastq.gz KAS-seq.paired.R2.fastq.gz &
+
+Options:
+<bowtie2_index_path>      Input the path of reference genome bowtie2 index.
+<threads>                 Input the number of threads.
+<basename>                Input the basename of KAS-seq_mapping.sh output files.
+<assembly>                Input the assembly of your reference genome(mm9, mm10, hg19, hg38...).
+<paired_or_single>        Specify the mode of KAS-seq data alignment(single, paired).
+<raw_fastq_read1>         Input the single-end KAS-seq fastq file or read 1 of paired-end KAS-seq fastq files.
+<raw_fastq_read2>         Input the read 2 of paired-end KAS-seq fastq files.
+-h or --help              Print the help.
+```
+
 
 
 
