@@ -170,11 +170,12 @@ Example: Reds ---colors.txt or Reds Oranges Blues Greens ---colors.txt
 -h or --help              Print the help.
 ```
 Successful KAS-seq data:
-```Profile on genebody```
+
+- Profile on genebody
   
 <img src="https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.Profile.png" width="400" height="300">
   
-```Heatmap on genebody```
+- Heatmap on genebody
   
 <img src="https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.heatmap.png" width="300" height="600">
 
