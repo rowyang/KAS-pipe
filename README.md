@@ -3,6 +3,9 @@ KAS-pipe is an analysis pipeline for KAS-seq data. KAS-seq is a kethoxal-assiste
 
 ![image](https://github.com/Ruitulyu/KAS-pipe/blob/master/Schematic%20diagram%20for%20KAS-seq.PNG)
 
+# Citation:
+Wu, Tong, et al. [Kethoxal-assisted single-stranded DNA sequencing captures global transcription dynamics and enhancer activity in situ](https://www.nature.com/articles/s41592-020-0797-9) Nature Methods 17.5 (2020): 515-523.
+
 # Dependencies:
 - samtools ==1.9
 - bedtools ==2.29.0
@@ -28,3 +31,6 @@ KAS-pipe is an analysis pipeline for KAS-seq data. KAS-seq is a kethoxal-assiste
 - macs2 ==2.2.4
 
 - java-jdk
+- python3
+
+# Installation:
