@@ -42,19 +42,48 @@ $ git clone https://github.com/Ruitulyu/KAS-pipe
 $ cd KAS-pipe
 $ chmod 755 setup.sh
 $ ./setup.sh
+# Install conda environment.
 $ install_conda_env.sh
 ```
 ## Install reference genome using KAS-pipe shell script:
 ```Swift
-# Please create a directory where you want to install your reference genome and index. Example: mkdir -p ~/Software/;
-$ cd ~/Software/
-$ build_reference_genome.sh hg19 ~/Software/
+# Please create a directory where you want to install your reference genome and index.
+$ mkdir -p ~/Software/
+$ cd ~/Software/Genome/
+$ build_reference_genome.sh hg19 ~/Software/Genome/
 
-# build_reference_genome.sh - This script is used to install reference genome <assembly> in a directory <dest_dir>.
-# Usage: build_reference_genome.sh <assembly> <dest_dir>
-# Example: nohup build_reference_genome.sh hg19 /your/genome/data/path/ &
-# Options:
-# <assembly> Input the assembly of the reference genome you want to download and install(mm9, mm10, hg19, hg38...).
-# <dest_dir> Input the path of the directory that you want to install your interested genome in your server.
+build_reference_genome.sh - This script is used to install reference genome <assembly> in a directory <dest_dir>.
+Usage: build_reference_genome.sh <assembly> <dest_dir>
+Example: nohup build_reference_genome.sh hg19 /your/genome/data/path/ &
+Options:
+<assembly> Input the assembly of the reference genome you want to download and install(mm9, mm10, hg19, hg38...).
+<dest_dir> Input the path of the directory that you want to install your interested genome in your server.
+-h or --help Print the help.
 ```
 # Usage:
+
+## Adapter and low quality sequence trimming:
+trim_adapter.sh - This script is used to trim adapter and low quality sequence from Raw KAS-seq data.
+``Swift
+Single_end: trim_adapter.sh <Adapter_type> <Minimum_reads_length> <threads> <single> <raw_fastq_read>
+Paired_end: trim_adapter.sh <Adapter_type> <Minimum_reads_length> <threads> <paired> <raw_fastq_read1> <raw_fastq_read2>
+
+Example:
+nohup trim_adapter.sh illumina 30 10 single raw_fastq_read1.fastq.gz &
+nohup trim_adapter.sh illumina 30 10 paired raw_fastq_read1.fastq.gz raw_fastq_read2.fastq.gz &
+
+Options:
+<adapter_type>           Input the adapter types during KAS-seq libraries construction(illumina, nextera, small_rna).
+<min_reads_length>       Discard reads that became shorter than length <min_reads_length> because of either quality or adapter trimming.
+<threads>                Input the number of cores to be used for trimming.
+<paired_or_single>       Specify the mode of sequencing data(single, paired).
+<raw_fastq_read1>        Input the single-end raw fastq file or read 1 of paired-end raw fastq files.
+<raw_fastq_read2>        Input the read 2 of paired-end raw fastq files.
+-h or --help             Print the help.
+Note: This shell script invoke the trim-galore, please refer http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/ for more information. 
+```
+
+
+
+
+
