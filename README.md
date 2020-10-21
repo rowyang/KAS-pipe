@@ -13,9 +13,11 @@ KAS-pipe is an analysis pipeline for KAS-seq data. KAS-seq is a kethoxal-assiste
 - [Plot heatmap or metagene profiles](#Plot-heatmap-or-metagene-profiles)
 - [KAS-seq correlation analysis](#KAS-seq-correlation-analysis)
 - [Differential KAS-seq analysis](#Differential-KAS-seq-analysis)
-- [Plot principal component analysis(PCA)](#Plot-principal-component-analysis(PCA))
+- [Plot principal component analysis(PCA)](#Plot-principal-component-analysis)
 - [Introduction for other provided shell scripts in KAS-pipe](#Introduction-for-other-provided-shell-scripts-in-KAS-pipe)
+- [Define single-stranded enhancers](#Define-single-stranded-enhancers)
 - [Citation](#Citation)
+
 
 # Dependencies
 - samtools ==1.9
@@ -260,7 +262,7 @@ diff_KAS-seq.sh outputs two files containing the peaks, bins or genes list with 
 ---treated_vs_untreated_DESeq2_output.csv
 ---DE.KAS_treated_vs_untreated_DESeq2_Fold1.5_padj0.01_output.csv
 ```
-## Plot principal component analysis(PCA)
+## Plot principal component analysis
 plotPCA.sh - This script is used to plot PCA analysis for KAS-seq data(bigWig files are needed).
 ```Swift
 Usage:
@@ -290,6 +292,21 @@ Example: red blue green purple ---colors.txt
 <peaks_list>              Input the merged KAS-seq peaks list(mergeBed -i Sorted_total_KAS-seq_peak.bed > merged_KAS-seq_peaks.bed).
 -h or --help              Print the help.
 ```
+## Define single-stranded enhancers
+define_single-stranded_enhancers.sh - This script is used to define single-stranded(Entire KAS and Middle KAS) enhancers.
+```Swift
+Usage: define_single-stranded_enhancers.sh <enhancer_list> <KAS_peaks> <assembly>.
+
+Example: nohup define_single-stranded_enhancers.sh enhancers.bed KAS_peaks.bed hg19 &
+
+Options:
+<enhancer_list>           Input the enhancers list at bed format, which can be defined using distal H3K27ac or ATAC-seq peaks.
+<KAS_peaks>               Input the KAS-seq peaks.
+Note: KAS-seq peaks on genebody enhancers may be affected by elongation related KAS signal, so it will be great if you use KAS-seq peaks in elongation inhibited cells, e.g DRB inhibited cells.
+<assembly>                Input the assembly of your reference genome(mm9, mm10, hg19, hg38...).
+-h or --help              Print the help.
+```
+
 ## Introduction for other provided shell scripts in KAS-pipe
 ```Swift
 define_single-stranded_enhancers.sh       This script is used to define single-stranded enhancers.
