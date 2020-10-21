@@ -6,16 +6,16 @@ KAS-pipe is an analysis pipeline for KAS-seq data. KAS-seq is a kethoxal-assiste
 # Table of Contents
 ----------------------------------------
 - [Dependencies](#Dependencies)
-- [Installation](#Installation:)
-- [Adapter and low quality sequence trimming](#Adapter-and-low-quality-sequence-trimming:)
-- [Map KAS-seq data to reference genome](#Map-KAS-seq-data-to-reference-genome:)
-- [KAS-seq peaks calling](#KAS-seq-peaks-calling:)
-- [Plot heatmap or metagene profiles](#Plot-heatmap-or-metagene-profiles:)
-- [KAS-seq correlation analysis](#KAS-seq-correlation-analysis:)
-- [Differential KAS-seq analysis](#Differential-KAS-seq-analysis:)
-- [Plot principal component analysis(PCA)](#Plot-principal-component-analysis(PCA):)
-- [Introduction for other provided shell scripts in KAS-pipe](#Introduction-for-other-provided-shell-scripts-in-KAS-pipe:)
-- [Citation](#Citation:)
+- [Installation](#Installation)
+- [Adapter and low quality sequence trimming](#Adapter-and-low-quality-sequence-trimming)
+- [Map KAS-seq data to reference genome](#Map-KAS-seq-data-to-reference-genome)
+- [KAS-seq peaks calling](#KAS-seq-peaks-calling)
+- [Plot heatmap or metagene profiles](#Plot-heatmap-or-metagene-profiles)
+- [KAS-seq correlation analysis](#KAS-seq-correlation-analysis)
+- [Differential KAS-seq analysis](#Differential-KAS-seq-analysis)
+- [Plot principal component analysis(PCA)](#Plot-principal-component-analysis(PCA))
+- [Introduction for other provided shell scripts in KAS-pipe](#Introduction-for-other-provided-shell-scripts-in-KAS-pipe)
+- [Citation](#Citation)
 
 # Dependencies
 - samtools ==1.9
@@ -44,10 +44,10 @@ KAS-pipe is an analysis pipeline for KAS-seq data. KAS-seq is a kethoxal-assiste
 - java-jdk
 - python3
 
-# Installation:
+# Installation
 Please make sure you have [miniconda3](https://docs.conda.io/en/latest/miniconda.html) or [anaconda3](https://www.anaconda.com/products/individual) environments in your server in order to use the provided shell script to install the dependencies. Or you can follow the user guide to accomplish the conda installation: https://docs.conda.io/projects/conda/en/latest/user-guide/install/.
 
-## Install KAS-pipe by cloning this repository:
+## Install KAS-pipe by cloning this repository
 ```Swift
 $ git clone https://github.com/Ruitulyu/KAS-pipe
 $ cd KAS-pipe
@@ -56,7 +56,7 @@ $ ./setup.sh
 # Install conda environment.
 $ install_conda_env.sh
 ```
-## Install reference genome on your linux:
+## Install reference genome on your linux
 ```Swift
 # Please create a directory where you want to install your reference genome and index.
 $ mkdir -p ~/Software/
@@ -74,7 +74,7 @@ Options:
 ```
 # Usage:
 
-## Adapter and low quality sequence trimming:
+## Adapter and low quality sequence trimming
 trim_adapter.sh - This script is used to trim adapter and low quality sequence from Raw KAS-seq data.
 ```Swift
 Single_end: trim_adapter.sh <Adapter_type> <Minimum_reads_length> <threads> <single> <raw_fastq_read>
@@ -95,7 +95,7 @@ Options:
 Note: This shell script invokes the trim-galore, please refer http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/ for more information. 
 ```
 
-## Map KAS-seq data to reference genome:
+## Map KAS-seq data to reference genome
 map_KAS-seq.sh - This script is used to map KAS-seq data to the reference genome.
 ```Swift
 Usage:
@@ -120,7 +120,7 @@ Note: map_KAS-seq.sh will generate KAS-seq deduplicated mapped reads(bam and bed
 If you want to transfer normalized bedGraph file to bigWig file, please refer to the provided shell scripts --normalize_KAS-seq.sh & --make_BigWig_files.sh.
 ```
 
-## KAS-seq peaks calling:
+## KAS-seq peaks calling
 call_KAS-seq_peaks.sh - This script is used to call peaks for KAS-seq data.
 ```Swift
 # Bed files or indexed bam files are needed for KAS-seq peaks calling.
@@ -145,7 +145,7 @@ Note: hs for Homo sapiens, mm for Mus musculus, ce for Caenorhabditis elegans, d
 -h or --help              Print the help.
 ```
 
-## Plot heatmap or metagene profiles:
+## Plot heatmap or metagene profiles
 plotSummary.sh - This script is used to generate heatmap or metagene profile for KAS-seq data(bigWig files are needed).
 ```Swift
 Usage:
@@ -190,7 +190,7 @@ Successful KAS-seq data:
   
 <img src="https://github.com/Ruitulyu/KAS-pipe/blob/master/images/KAS-seq_on_hg19_Refseq.mRNA.heatmap.png" width="300" height="500">
 
-## KAS-seq correlation analysis:
+## KAS-seq correlation analysis
 plotCorrelation.sh - This script is used to generate correlation plot for KAS-seq data.
 ```Swift
 Note: BigWig files of KAS-seq data were needed
@@ -221,7 +221,7 @@ If you want to plot heatmap, please make sure if you have more than 2 samples.
 -h or --help             Print the help.
 ```
 
-## Differential KAS-seq analysis: 
+## Differential KAS-seq analysis
 diff_KAS-seq.sh - This script is used to identify regions with differential KAS-seq signal.
 ```Swift
 # KAS-seq bigWig files are needed.
@@ -260,7 +260,7 @@ diff_KAS-seq.sh outputs two files containing the peaks, bins or genes list with 
 ---treated_vs_untreated_DESeq2_output.csv
 ---DE.KAS_treated_vs_untreated_DESeq2_Fold1.5_padj0.01_output.csv
 ```
-## Plot principal component analysis(PCA):
+## Plot principal component analysis(PCA)
 plotPCA.sh - This script is used to plot PCA analysis for KAS-seq data(bigWig files are needed).
 ```Swift
 Usage:
@@ -290,7 +290,7 @@ Example: red blue green purple ---colors.txt
 <peaks_list>              Input the merged KAS-seq peaks list(mergeBed -i Sorted_total_KAS-seq_peak.bed > merged_KAS-seq_peaks.bed).
 -h or --help              Print the help.
 ```
-## Introduction for other provided shell scripts in KAS-pipe:
+## Introduction for other provided shell scripts in KAS-pipe
 ```Swift
 define_single-stranded_enhancers.sh       This script is used to define single-stranded enhancers.
 download_reference_genome.sh              This script is used to download reference genome <assembly> in a directory <dest_dir>.
@@ -300,5 +300,5 @@ uninstall_conda_env.sh                    This script is used to uninstall KAS-p
 update_conda_env.sh                       This script is used to update KAS-pipe conda environment.
 ```
 
-# Citation:
+# Citation
 Wu, Tong, et al. [Kethoxal-assisted single-stranded DNA sequencing captures global transcription dynamics and enhancer activity in situ](https://www.nature.com/articles/s41592-020-0797-9). Nature Methods 17.5 (2020): 515-523.
