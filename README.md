@@ -14,8 +14,8 @@ KAS-pipe is an analysis pipeline for KAS-seq data. KAS-seq is a kethoxal-assiste
 - [KAS-seq correlation analysis](#KAS-seq-correlation-analysis)
 - [Differential KAS-seq analysis](#Differential-KAS-seq-analysis)
 - [Plot principal component analysis(PCA)](#Plot-principal-component-analysis)
-- [Introduction for other provided shell scripts in KAS-pipe](#Introduction-for-other-provided-shell-scripts-in-KAS-pipe)
 - [Define single-stranded enhancers](#Define-single-stranded-enhancers)
+- [Introduction for other provided shell scripts in KAS-pipe](#Introduction-for-other-provided-shell-scripts-in-KAS-pipe)
 - [Citation](#Citation)
 
 
@@ -47,7 +47,7 @@ KAS-pipe is an analysis pipeline for KAS-seq data. KAS-seq is a kethoxal-assiste
 - python3
 
 # Installation
-Please make sure you have [miniconda3](https://docs.conda.io/en/latest/miniconda.html) or [anaconda3](https://www.anaconda.com/products/individual) environments in your server in order to use the provided shell script to install the dependencies. Or you can follow the user guide to accomplish the conda installation: https://docs.conda.io/projects/conda/en/latest/user-guide/install/.
+Please make sure you have conda([miniconda3](https://docs.conda.io/en/latest/miniconda.html) or [anaconda3](https://www.anaconda.com/products/individual)) environment in your Linux in order to install the dependencies of KAS-pipe. Or you can follow the user guide to accomplish the conda installation: https://docs.conda.io/projects/conda/en/latest/user-guide/install/.
 
 ## Install KAS-pipe by cloning this repository
 ```Swift
