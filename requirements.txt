@@ -29,9 +29,9 @@ r-snow
 r-snowfall
 r-bitops
 r-catools
+r-ggpubr
 bioconductor-rsamtools
 bioconductor-deseq2
-
 libiconv
 
 bowtie2 ==2.3.4.3
