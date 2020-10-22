@@ -100,6 +100,7 @@ Note: This shell script invokes the trim-galore, please refer http://www.bioinfo
 ## Map KAS-seq data to reference genome
 map_KAS-seq.sh - This script is used to map KAS-seq data to the reference genome.
 ```Swift
+Note: Make sure you have at least 50M paired-end raw read-pairs or single-end reads!
 Usage:
 Single_end: map_KAS-seq.sh <bowtie2_index_path> <threads> <basename> <assembly> <single> <raw_fastq_read>
 Paired_end: map_KAS-seq.sh <bowtie2_index_path> <threads> <basename> <assembly> <paired> <raw_fastq_read1> <raw_fastq_read2>
