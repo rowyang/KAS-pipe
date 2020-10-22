@@ -30,6 +30,7 @@ r-snowfall
 r-bitops
 r-catools
 r-ggpubr
+r-biocmanager
 bioconductor-rsamtools
 bioconductor-deseq2
 libiconv
