@@ -98,9 +98,11 @@ Note: This shell script invokes the trim-galore, please refer http://www.bioinfo
 ```
 
 ## Map KAS-seq data to reference genome
+### Sequencing depth
+The optimal sequencing depth varies based on the size of the reference genome and the degree of single-stranded DNA expected. For studies of human samples, we recommend more than 50 million mapped reads per sample.
+
 map_KAS-seq.sh - This script is used to map KAS-seq data to the reference genome.
 ```Swift
-Note: Make sure you have at least 50M paired-end raw read-pairs or single-end reads!
 Usage:
 Single_end: map_KAS-seq.sh <bowtie2_index_path> <threads> <basename> <assembly> <single> <raw_fastq_read>
 Paired_end: map_KAS-seq.sh <bowtie2_index_path> <threads> <basename> <assembly> <paired> <raw_fastq_read1> <raw_fastq_read2>
